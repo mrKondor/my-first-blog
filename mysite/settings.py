@@ -26,6 +26,9 @@ SECRET_KEY = '9e8dns$rg^q&d*6ez$@#xa4$*tc=&orp*!_62n!cfo-hx%)t)x'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', ' . pythonanywhere.com']
+ALLOWED_HOSTS = ['mrkondor.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1']
+
 
 
 # Application definition
@@ -121,3 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

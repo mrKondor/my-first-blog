@@ -2,19 +2,21 @@
 <html>
     <head>
 
-        
+        <title>The Beatles Blog</title>
+           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">        
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+    </head>
+    <body>
+            
         <div class="page-header">
+          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
     <h1><a href="/">The Beatles Blog</a></h1>
 </div>
 
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
-
- <body>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
@@ -23,6 +25,7 @@
             </div>
         </div>
     </div>
+
 </body>
 </html> 
 

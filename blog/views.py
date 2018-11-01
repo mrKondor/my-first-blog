@@ -1,7 +1,10 @@
+from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404  #lo puedo quitar
 from .models import Post
+#antes de poner la linea 6 y la linea 18 en adelante y el comentario que esta en urls.py corria el servidor/// corrijo con estas lineas y las de urls.py ya corre el servidor
+from .forms import PostForm
 
 
 
@@ -12,3 +15,16 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('blog.views.post_detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})
